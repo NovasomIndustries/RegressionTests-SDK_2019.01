@@ -86,4 +86,5 @@ else
         echo "          ${MAKE_UBOOT_CMD} Passed" >> ${REGTESTLOG}-${NOW}
 fi
 echo "  u-boot basic test finished at `date +%Y-%d-%m.%H:%M`" >> ${REGTESTLOG}-${NOW}
+echo "Regression tests finished at `date +%Y-%d-%m.%H:%M`" >> ${REGTESTLOG}-${NOW}
 
