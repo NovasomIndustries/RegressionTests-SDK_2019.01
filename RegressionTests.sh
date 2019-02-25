@@ -4,9 +4,9 @@ if [ -z $1 ]; then
 	exit
 fi
 
-[ "$1" == "P" ] && . ./Pboard.inc
-[ "$1" == "U" ] && . ./Uboard.inc
-[ "$1" == "M7" ] && . ./M7board.inc
+[ "$1" == "P" ] && . ./inc/Pboard.inc
+[ "$1" == "U" ] && . ./inc/Uboard.inc
+[ "$1" == "M7" ] && . ./inc/M7board.inc
 
 HERE=`pwd`
 
