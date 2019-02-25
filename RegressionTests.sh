@@ -14,7 +14,7 @@ NOW=`date +%Y-%d-%m_%H-%M`
 
 cd ${SDK}/Utils
 rm -rf ${SDK}/${FILESYSTEM_DIR}/${REGTESTFS}
-echo "Regression tests started at ${NOW}" > ${REGTESTLOG}-${NOW}
+echo "Regression tests started at `date +%Y-%d-%m.%H:%M`" >> ${REGTESTLOG}-${NOW}
 echo "Testing ${BOARD_NAME} board at `date +%Y-%d-%m.%H:%M`" >> ${REGTESTLOG}-${NOW}
 ./${SETUPFS_CMD}
 if ! [ "$?" == "0" ]; then
