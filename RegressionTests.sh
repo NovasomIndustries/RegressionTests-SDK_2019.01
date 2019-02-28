@@ -15,7 +15,20 @@ NOW=`date +%Y-%d-%m_%H-%M`
 cd ${SDK}/Utils
 rm -rf ${SDK}/${FILESYSTEM_DIR}/${REGTESTFS}
 echo "Regression tests started at `date +%Y-%d-%m.%H:%M`" >> ${REGTESTLOG}-${NOW}
-echo "Testing ${BOARD_NAME} board at `date +%Y-%d-%m.%H:%M`" >> ${REGTESTLOG}-${NOW}
+if [ -z $2 ]; then
+	SETUPFS_CMD="./SetupFs ${REGTESTFS} $1 ${DEFAULTCONFIG}"
+	FSCONFIG=${DEFAULTCONFIG}
+else
+	SETUPFS_CMD="./SetupFs ${REGTESTFS} $1 $2"
+	FSCONFIG=$2
+fi
+#echo "**** in  ./RegressionTests.sh **** "
+#echo $2
+#echo ${SETUPFS_CMD}
+#echo "**** out ./RegressionTests.sh **** "
+#exit
+
+echo "Testing ${BOARD_NAME} board with ${FSCONFIG} at `date +%Y-%d-%m.%H:%M`" >> ${REGTESTLOG}-${NOW}
 ./${SETUPFS_CMD}
 if ! [ "$?" == "0" ]; then
 	echo "	Filesystem Generation : FAIL" >> ${REGTESTLOG}-${NOW}

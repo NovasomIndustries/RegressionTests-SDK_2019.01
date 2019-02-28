@@ -9,6 +9,7 @@ DtbUserWorkArea_DIR="DtbUserWorkArea/M7Class_bspf"
 # Board specific parameters
 BOARD_NAME="M7"
 REGTESTFS=RegressionTests${BOARD_NAME}
+DEFAULTCONFIG="M7Class_Buildroot_Base.config"
 REGTESTLOG=${SDK}/${LOG_DIR}/RegressionTestsLogs${BOARD_NAME}
 BOARD_DIR="${SDK}/${UTILS_DIR}/rock"
 SETUPFS_CMD="./SetupFs ${REGTESTFS} M7 M7Class_Buildroot_Base.config"

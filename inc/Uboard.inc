@@ -9,6 +9,7 @@ DtbUserWorkArea_DIR="DtbUserWorkArea/UClass_bspf"
 # Board specific parameters
 BOARD_NAME="U"
 REGTESTFS=RegressionTests${BOARD_NAME}
+DEFAULTCONFIG="U5Class_Buildroot_Base.config"
 REGTESTLOG=${SDK}/${LOG_DIR}/RegressionTestsLogs${BOARD_NAME}
 BOARD_DIR="${SDK}/${UTILS_DIR}/nxp"
 SETUPFS_CMD="./SetupFs ${REGTESTFS} U5 U5Class_Buildroot_Base.config"

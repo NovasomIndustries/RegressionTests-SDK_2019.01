@@ -9,6 +9,7 @@ DtbUserWorkArea_DIR="DtbUserWorkArea/PClass_bspf"
 # Board specific parameters
 BOARD_NAME="P"
 REGTESTFS=RegressionTests${BOARD_NAME}
+DEFAULTCONFIG="PClass_Buildroot_Base.config"
 REGTESTLOG=${SDK}/${LOG_DIR}/RegressionTestsLogs${BOARD_NAME}
 BOARD_DIR="${SDK}/${UTILS_DIR}/nxp"
 SETUPFS_CMD="./SetupFs ${REGTESTFS} P PClass_Buildroot_Base.config"
