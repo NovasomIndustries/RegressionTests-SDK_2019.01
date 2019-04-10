@@ -34,13 +34,14 @@ if ! [ "$?" == "0" ]; then
 	echo "	Filesystem Generation : FAIL" >> ${REGTESTLOG}-${NOW}
 else
 	echo "	Filesystem Generation : Pass" >> ${REGTESTLOG}-${NOW}
-fi
-cd ${SDK}/${FILESYSTEM_DIR}/${REGTESTFS}
-make
-if ! [ "$?" == "0" ]; then
-	echo "	Filesystem Compilation : FAIL" >> ${REGTESTLOG}-${NOW}
-else
-	echo "	Filesystem Compilation : Pass" >> ${REGTESTLOG}-${NOW}
+	cd ${SDK}/${FILESYSTEM_DIR}/${REGTESTFS}
+	make
+	if ! [ "$?" == "0" ]; then
+		echo "	Filesystem Compilation : FAIL" >> ${REGTESTLOG}-${NOW}
+		mv ${SDK}/${FILESYSTEM_DIR}/${REGTESTFS} ${SDK}/${FILESYSTEM_DIR}/${REGTESTFS}_FAILED
+	else
+		echo "	Filesystem Compilation : Pass" >> ${REGTESTLOG}-${NOW}
+	fi
 fi
 cd ${BOARD_DIR}
 ${KMAKE_CMD}
