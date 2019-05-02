@@ -1,4 +1,4 @@
-SDK="/Devel/NOVAsdk2019.01"
+SDK="/Devel/NOVAsdk"
 UTILS_DIR="Utils"
 FILESYSTEM_DIR="FileSystem"
 KERNEL_DIR="Kernel"
